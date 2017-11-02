@@ -13,7 +13,7 @@ export default class GreyHairlineTextbox extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.wrapper}>
-          <TextInput onSubmitEditing={this.props.onSubmitEditing} keyboardType={this.props.keyboardType} secureTextEntry={this.props.secureTextEntry} underlineColorAndroid="rgba(0,0,0,0)" style={styles.input} placeholder={this.props.placeholder} onChangeText={this.props.onChangeText} placeholderTextColor="#dcdcdc" />
+          <TextInput onSubmitEditing={this.props.onSubmitEditing} keyboardType={this.props.keyboardType} secureTextEntry={this.props.secureTextEntry} underlineColorAndroid="rgba(0,0,0,0)" style={styles.input} placeholder={this.props.placeholder} onChangeText={this.props.onChangeText} placeholderTextColor="#f6936f" />
           <View style={styles.hairline} />
         </View>
       </View>
@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
     height: 65,
     backgroundColor: 'transparent',
 
-    color: '#000',
+    color: '#fff',
     fontFamily: 'Poppins-Regular',
     fontSize: 15,
   },
   hairline: {
     height: 1,
-    backgroundColor: '#acacac',
+    backgroundColor: '#fff',
     marginLeft: 20,
     marginRight: 20,
     marginTop: -20,

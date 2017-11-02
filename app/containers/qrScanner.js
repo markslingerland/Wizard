@@ -7,7 +7,7 @@ export default class qrScanner {
     render(){
         return(
             <View style={styles.container}>            
-
+                
             </View>
         )
     }

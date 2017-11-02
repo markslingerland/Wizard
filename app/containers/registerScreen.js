@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, StatusBar, AsyncStorage, Keyboard } from 'react-native';
-import OrangeRoundCornerButton from '../components/Buttons/OrangeRoundCornerButton';
+import TransparentRoundOrangeCornerButton from '../components/Buttons/TransparentRoundOrangeCornerButton';
 import GreyHairlineTextbox from '../components/GreyHairlineTextbox';
+import LinearGradient from 'react-native-linear-gradient';
 
 class registerScreen extends Component {
   constructor(props){
@@ -14,7 +15,6 @@ class registerScreen extends Component {
     email: null,
     password: null,
     passwordRepeat: null,
-    
     loading: false
   }
 
@@ -31,9 +31,13 @@ class registerScreen extends Component {
 
   }
 
+  static navigationOptions = {
+    header: null
+  };
+
   render(){
     return(
-      <View style={styles.container}>
+      <LinearGradient colors={['#f25c24','#f36b38','#f58156']} style={styles.container}>
         <StatusBar backgroundColor="#f25c24" barStyle="light-content" />
         <View style={styles.place}>
           <Text style={styles.textDesign}>
@@ -44,16 +48,16 @@ class registerScreen extends Component {
           <GreyHairlineTextbox placeholder={'wachtwoord'} secureTextEntry={true} onChangeText={(text) => this.setState({password: text})} />
           <GreyHairlineTextbox placeholder={'wachtwoord herhalen'} secureTextEntry={true} onChangeText={(text) => this.setState({passwordRepeat: text})} />
           <View style={{ marginTop: 40 }} >
-            <OrangeRoundCornerButton text={'Account aanmaken'} onPress={() => this.register()} loading={this.state.loading} />
+            <TransparentRoundOrangeCornerButton text={'Account aanmaken'} onPress={() => this.register()} loading={this.state.loading} />
           </View>
-          <Text style={styles.text}>
-          Of heeft u al een account?
-          </Text>
-          <View style={{ marginTop: 40 }} >
-            <OrangeRoundCornerButton text={'Login'} loading={this.state.loading} />
+          <View>
+            <Text style={styles.text}>
+              Of heeft u al een account?
+            </Text>
+            <TransparentRoundOrangeCornerButton text={'Login'} loading={this.state.loading} />
           </View>
         </View>
-      </View>
+      </LinearGradient>
     );
   }
 }
@@ -64,27 +68,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff',
+    justifyContent: 'center',
   },
   place: {
-    flex: 0.7,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
     fontFamily: 'Poppins-Bold',
-    fontSize: 20,
-    marginTop: 20,
-    color: '#000'
+    fontSize: 13,
+    marginTop: 10,
+    marginBottom: 2,
+    color: '#fff',
+    textAlign: 'center',
   },
   textDesign: {
     fontFamily: 'Poppins-Bold',
     fontSize: 20,
     marginTop: 80,
-    color: '#000',
-  },
-  linearGradient: {
-    flex: 1,
+    color: '#fff',
   },
 
 });
